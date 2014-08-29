@@ -117,6 +117,12 @@ namespace Protobuild
         public string[] ModuleAssemblies { get; set; }
 
         /// <summary>
+        /// Gets or sets a set of submodule references.
+        /// </summary>
+        /// <value>The registered submodules.</value>
+        public SubmoduleRef[] Submodules { get; set; }
+
+        /// <summary>
         /// Loads the Protobuild module from the Module.xml file.
         /// </summary>
         /// <param name="xmlFile">The path to a Module.xml file.</param>

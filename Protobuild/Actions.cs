@@ -187,6 +187,10 @@ namespace Protobuild
                 multiplePlatforms = platform;
             }
 
+            // Resolve submodules as needed.
+            var submoduleManager = new Submodules.SubmoduleManager();
+            submoduleManager.ResolveAll(module, primaryPlatform, false);
+
             // You can configure the default action for Protobuild in their project
             // with the <DefaultAction> tag in Module.xml.  If omitted, default to a resync.
             // Valid options for this tag are either "Generate", "Resync" or "Sync".
@@ -233,6 +237,9 @@ namespace Protobuild
                     // Already handled above.
                     continue;
                 }
+
+                // Resolve submodules as needed.
+                submoduleManager.ResolveAll(module, platformIter, false);
 
                 switch (action.ToLower())
                 {
