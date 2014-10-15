@@ -281,12 +281,12 @@
           <xsl:when test="/Input/Generation/Platform = 'iOS' or /Input/Generation/Platform = 'PSMobile'">
           </xsl:when>
           <xsl:when test="/Input/Generation/Platform = 'PCL'">
-            <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+            <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
             <TargetFrameworkProfile>Profile328</TargetFrameworkProfile>
             <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
           </xsl:when>
           <xsl:otherwise>
-            <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+            <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:otherwise>
