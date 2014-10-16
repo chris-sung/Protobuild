@@ -1899,6 +1899,18 @@
       {ADDITIONAL_TRANSFORMS}
 
       <ItemGroup>
+        <xsl:for-each select="$project/References/MscoreeReference">
+          <COMReference Include="mscoree">
+            <Guid>{5477469E-83B1-11D2-8B49-00A0C9B7C9C4}</Guid>
+            <VersionMajor>2</VersionMajor>
+            <VersionMinor>4</VersionMinor>
+            <Lcid>0</Lcid>
+            <WrapperTool>tlbimp</WrapperTool>
+            <Isolated>False</Isolated>
+            <EmbedInteropTypes>True</EmbedInteropTypes>
+          </COMReference>
+        </xsl:for-each>
+        
         <xsl:for-each select="$project/References/Reference">
           <xsl:variable name="include-name" select="./@Include" />
           <xsl:if test="
