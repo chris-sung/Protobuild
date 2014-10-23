@@ -194,13 +194,11 @@ namespace Protobuild
         /// Loads all of the submodules present in this module.
         /// </summary>
         /// <returns>The loaded submodules.</returns>
-        public ModuleInfo[] GetSubmodules(string relative = "")
+        public ModuleInfo[] GetSubmodules()
         {
             var modules = new List<ModuleInfo>();
-            foreach (var directory in new DirectoryInfo(string.IsNullOrWhiteSpace(relative) ? this.Path : Path + '\\' + relative).GetDirectories())
+            foreach (var directory in new DirectoryInfo(this.Path).GetDirectories())
             {
-	            modules.AddRange(GetSubmodules((relative + '\\' + directory).Trim('\\')));
-
                 var build = directory.GetDirectories().FirstOrDefault(x => x.Name == "Build");
                 if (build == null)
                 {
